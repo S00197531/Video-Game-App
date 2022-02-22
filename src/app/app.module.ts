@@ -13,7 +13,7 @@ import {MatIconModule} from '@angular/material/icon'
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { HomeComponent } from './components/home/home.component'
-
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,8 @@ import { HomeComponent } from './components/home/home.component'
     GaugeModule.forRoot(),
     MatFormFieldModule,
     MatIconModule,
-    MatTabsModule
+    MatTabsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
