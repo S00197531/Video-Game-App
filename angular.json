@@ -109,5 +109,8 @@
       }
     }
   },
-  "defaultProject": "video-game"
+  "defaultProject": "video-game",
+  "cli": {
+    "analytics": false
+  }
 }
