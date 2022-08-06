@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/user')
 const mongoose = require('mongoose')
-const db = "localhost:27017"
+const db = "mongodb+srv://dbUser:dbpass@eventsdb.bchvp.mongodb.net/eventsdb"
 
 mongoose.connect(db, err => {
     if (err) {
