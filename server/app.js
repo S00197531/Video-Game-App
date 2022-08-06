@@ -6,37 +6,19 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('./config/database')
 
-mongoose.connect(config.database)
-
-mongoose.connection.on('connected', () => {
-    console.log('Conected to database '+config.database)
-})
-
-mongoose.connection.on('error', (err) => {
-    console.log('error to database '+err)
-})
-
+const PORT = 3000;
+const api = require('./routes/api')
 const app = express();
 
-const users = require('./routes/users');
-
-const port = 3000;
-
-app.use(cors());
-
-//Set Static Folder
-//app.use(express.static(path.join(__dirname, 'src')))
-
-//Body Parser Middleware
 app.use(bodyParser.json());
 
-app.use('/users', users);
+app.use('/api', api)
 
 //Index Route
-app.get('/', (req, res) => {
-    res.send('Invalid Endpoint')
+app.get('/', function(req, res){
+    res.send('Hello From Server')
 })
 
-app.listen(port, () => {
-    console.log('Server started on port '+port)
+app.listen(PORT, () => {
+    console.log('Server started on port '+PORT)
 });
