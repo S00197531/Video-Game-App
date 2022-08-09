@@ -20,6 +20,7 @@ import { DetailsComponent } from './components/details/details.component';
 import { GameTabsComponent } from './components/game-tabs/game-tabs.component';
 import { LoginpageComponent } from './components/loginpage/loginpage.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,9 @@ import { RegisterComponent } from './components/register/register.component';
       provide : HTTP_INTERCEPTORS,
       useClass : HttpErrorsInterceptor,
       multi : true,
+    },
+    {
+      provide : AuthService
     }
   ],
   bootstrap: [AppComponent]
