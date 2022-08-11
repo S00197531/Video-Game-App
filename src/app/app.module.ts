@@ -21,6 +21,7 @@ import { GameTabsComponent } from './components/game-tabs/game-tabs.component';
 import { LoginpageComponent } from './components/loginpage/loginpage.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthService } from './services/auth.service';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,10 @@ import { AuthService } from './services/auth.service';
       provide : HTTP_INTERCEPTORS,
       useClass : HttpHeadersInterceptor,
       multi : true,
+    },
+    {
+      provide : AuthGuard
+      
     },
     {
       provide : HTTP_INTERCEPTORS,
