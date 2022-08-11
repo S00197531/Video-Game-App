@@ -22,6 +22,7 @@ import { LoginpageComponent } from './components/loginpage/loginpage.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './auth.guard';
+import { TokenInterceptorService } from './token-interceptor.service';
 
 @NgModule({
   declarations: [
